@@ -1,4 +1,4 @@
-// imports
+// import
 // auth related (checkAuth, signOutUser)
 import { checkAuth, signOutUser, getCategories, createPost } from '../fetch-utils.js';
 import { renderCategoryOptions } from '../render-utils.js';
