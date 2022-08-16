@@ -33,7 +33,7 @@ postItForm.addEventListener('submit', async (e) => {
     errorDisplay.textContent = '';
     // remember the button text
     const buttonText = addButton.textContent;
-    // disabled button and change to "saving..."
+    // disabled button and change to "sfoaving..."
     addButton.disabled = true;
     addButton.textContent = 'Saving...';
 

@@ -41,3 +41,11 @@ export function renderPosts(posts) {
 
     return fragment;
 }
+
+export function renderDetails(post) {
+    const div = document.createElement('div');
+    const title = document.createElement('p');
+    const description = document.createElement('p');   
+    const category = document.createElement('p');
+
+}
