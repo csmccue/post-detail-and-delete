@@ -53,3 +53,11 @@ export async function getPosts() {
 export async function createPost(post) {
     return await client.from('posts').insert(post);
 }
+
+export async function getPost(id) {
+    const response = await client.from('posts').select(`
+    *,
+    category:categories(*)
+`).match({ id }).single();
+    return response.data; 
+}
