@@ -61,3 +61,14 @@ export async function getPost(id) {
 `).match({ id }).single();
     return response.data; 
 }
+
+export async function deletePostById(id) {
+    const response = await client.from('posts').delete().match({ id });
+    return response.data;
+}
+
+// export function checkAuth() {
+//     const user = checkAuth();
+//     return user;
+
+// }
