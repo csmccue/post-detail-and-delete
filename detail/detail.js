@@ -1,5 +1,6 @@
 import { checkAuth, getPost, deletePostById } from '../fetch-utils.js';
 import { renderDetails } from '../render-utils.js';
+//import { displayPosts } from '/app.js';
 
 //console.log('we are inside the detail.js stuff');
 
@@ -22,9 +23,10 @@ async function loadData() {
        // deleteButtonEl.classList.add('delete-button');
         deleteButtonEl.textContent = 'DELETE THIS';
         
-        deleteButtonEl.addEventListener('click', () => {
-            deletePostById(data.id);
-
+        deleteButtonEl.addEventListener('click', async () => {
+            await deletePostById(data.id);
+            location.replace(`../`);
+         //   displayPosts();
         });
         postItDetailContainer.append(deleteButtonEl);
     }
