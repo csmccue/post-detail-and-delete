@@ -1,3 +1,5 @@
+//import { deletePostById } from './fetch-utils.js';
+
 export function renderCategoryOptions(categories) {
     // document fragment is a "bag" for elements
     const fragment = document.createDocumentFragment();
@@ -16,6 +18,9 @@ export function renderPosts(posts) {
     const fragment = document.createDocumentFragment();
 
     for (const post of posts) {
+        const a = document.createElement('a');
+        a.href = `./detail/?id=${post.id}`;
+        
         const li = document.createElement('li');
         li.classList.add('post-it');
 
@@ -34,10 +39,34 @@ export function renderPosts(posts) {
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
 
+
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
 
-        fragment.append(li);
+        fragment.append(a);
+        a.append(li);
     }
 
     return fragment;
+}
+
+export function renderDetails(post) {
+    const div = document.createElement('div');
+    const titleEl = document.createElement('p');
+    const descriptionEl = document.createElement('p');   
+    const categoryEl = document.createElement('p');
+
+    titleEl.textContent = `${post.title}`;
+    descriptionEl.textContent = `${post.description}`;
+    categoryEl.textContent = `${post.category.emoji}`;
+
+    // const deleteButtonEl = document.createElement('button');
+    // deleteButtonEl.classList.add('delete-button');
+    // deleteButtonEl.textContent = 'DELETE THIS NEPHEW';
+
+    // deleteButtonEl.addEventListener('click', () => {
+    //     deletePostById.apply(post.id);
+    // });
+
+    div.append(titleEl, descriptionEl, categoryEl);
+    return div;
 }
