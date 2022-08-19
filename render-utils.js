@@ -28,14 +28,13 @@ export function renderPosts(posts) {
         titleEl.textContent = post.title;
 
         const categoryEl = document.createElement('span');
-        categoryEl.classList.add('category');
+        //categoryEl.classList.add('category');
         categoryEl.title = post.category.name;
-        console.log(categoryEl);
         // here i grab category name but it doesnt show up in final
         categoryEl.textContent = post.category.emoji;
 
         const descriptionEl = document.createElement('p');
-        descriptionEl.classList.add('description');
+       // descriptionEl.classList.add('description');
         descriptionEl.textContent = post.description;
 
         const contactEl = document.createElement('p');
@@ -58,7 +57,7 @@ export function renderDetails(post) {
     descriptionEl.classList.add('description');
         //not showing description css
     const categoryEl = document.createElement('h4');
-   categoryEl.classList.add('category');
+    categoryEl.classList.add('category');
         //not showing category-detail css
 
     titleEl.textContent = `${post.title}`;
