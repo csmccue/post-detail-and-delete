@@ -30,6 +30,7 @@ export function renderPosts(posts) {
         const categoryEl = document.createElement('span');
         categoryEl.classList.add('category');
         categoryEl.title = post.category.name;
+        console.log(categoryEl);
         // here i grab category name but it doesnt show up in final
         categoryEl.textContent = post.category.emoji;
 
@@ -39,7 +40,6 @@ export function renderPosts(posts) {
 
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
-        // no class list add?
 
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
         // no category title and no contact info in final post it
@@ -55,10 +55,10 @@ export function renderDetails(post) {
     div.classList.add('post-it');
     const titleEl = document.createElement('h3');
     const descriptionEl = document.createElement('description');  
-    //descriptionEl.classList.add('description');
+    descriptionEl.classList.add('description');
         //not showing description css
     const categoryEl = document.createElement('h4');
-   // categoryEl.classList.add('category-detail');
+   categoryEl.classList.add('category');
         //not showing category-detail css
 
     titleEl.textContent = `${post.title}`;
