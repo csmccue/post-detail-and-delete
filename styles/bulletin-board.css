@@ -36,6 +36,12 @@
 
 .post-it h2 {
     font-weight: bold;
+    font-size: 1.5em;
+}
+/* title of post detail */
+.post-it h3 {
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .post-it p {
@@ -50,12 +56,11 @@
     font-size: 1.5em;
 }
 
-.post-it-details .category-detail {
+.post-it h4 {
     position: absolute;
     top: 4px;
-    /* should be left but leaving as right to compare for troubleshooting */
-    left: 4px;
-    font-size: 1.0em;
+    right: 4px;
+    font-size: 2em;
 }
 
 .post-it-details .description {

@@ -53,10 +53,13 @@ export function renderPosts(posts) {
 export function renderDetails(post) {
     const div = document.createElement('div');
     div.classList.add('post-it');
-    const titleEl = document.createElement('p');
+    const titleEl = document.createElement('h3');
     const descriptionEl = document.createElement('description');  
-    const categoryEl = document.createElement('p');
-    categoryEl.classList.add('category-detail');
+    //descriptionEl.classList.add('description');
+        //not showing description css
+    const categoryEl = document.createElement('h4');
+   // categoryEl.classList.add('category-detail');
+        //not showing category-detail css
 
     titleEl.textContent = `${post.title}`;
     descriptionEl.textContent = `${post.description}`;
