@@ -78,5 +78,13 @@ export function renderProfile(profile) {
 
     div.append(profileNameEl, profileBioEl);
     return div;
+}
+
+export function renderUser(id) {
+    const div = document.createElement('div');
+    const userNameEl = document.createElement('p');
+    userNameEl.textContent = id.user_name;
+    div.append(userNameEl);
+    return div;
 
 }

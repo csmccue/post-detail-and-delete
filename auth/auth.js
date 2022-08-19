@@ -80,8 +80,8 @@ authForm.addEventListener('submit', async (e) => {
             bio: '',
         };
         await saveProfile(profile);
-        console.log(user);
-        debugger;
+        // console.log(user);
+        // debugger;
     }
     if (error) {
         // display the error and reset the button to be active

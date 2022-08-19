@@ -1,5 +1,4 @@
 import { saveProfile, getProfile, getUser } from '../fetch-utils.js';
-import { renderProfile } from '../render-utils.js';
 
 const form = document.getElementById('update-form');
 const usernameEl = document.getElementById('username');
@@ -10,7 +9,7 @@ const user = getUser();
 
 async function updateProfile() {
     const profile = await getProfile(user.id);
-    console.log(profile);
+    // console.log(profile);
     if (profile) {
         usernameEl.value = profile.user_name;
         bioEl.value = profile.bio;
@@ -32,5 +31,4 @@ form.addEventListener('submit', async (e) => {
     form.reset();
     updateProfile();
 });
-
 updateProfile();
