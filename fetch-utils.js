@@ -2,6 +2,7 @@ const SUPABASE_URL = 'https://hblfwxkzbpedcnqbkubv.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhibGZ3eGt6YnBlZGNucWJrdWJ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjA2NjkxNDUsImV4cCI6MTk3NjI0NTE0NX0.p3bj3QjwMYYomNqr7_cSg9sHXTOO2GUa8AZaT17dxkc';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+
 /* Auth related functions */
 
 export function getUser() {
@@ -67,6 +68,17 @@ export async function deletePostById(id) {
     return response.data;
 }
 
-export async function returnHome() {
-    return await location.replace(`../`);
+export async function getProfiles() {
+    const response = await client.from('profiles').select(`*`);
+    return checkError(response);
+}
+
+export async function getProfile(id) {
+    const response = await client.from('profiles').select(`*`).match({ id }).single();
+    return response.data; 
+}
+
+export async function saveProfile(profile) {
+    return await client.from('profiles').upsert(profile);
+    
 }

@@ -1,7 +1,5 @@
-import { checkAuth, getPost, deletePostById, returnHome } from '../fetch-utils.js';
+import { checkAuth, getPost, deletePostById } from '../fetch-utils.js';
 import { renderDetails } from '../render-utils.js';
-
-
 
 const params = new URLSearchParams(window.location.search);
 const postItDetailContainer = document.getElementById('post-it-details');

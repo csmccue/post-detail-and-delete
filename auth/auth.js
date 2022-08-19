@@ -1,5 +1,5 @@
 // import services and utilities
-import { getUser, signInUser, signUpUser } from '../fetch-utils.js';
+import { getUser, saveProfile, signInUser, signUpUser } from '../fetch-utils.js';
 
 const authHeader = document.getElementById('auth-header');
 const authForm = document.getElementById('auth-form');
@@ -12,7 +12,7 @@ const params = new URLSearchParams(location.search);
 const redirectUrl = params.get('redirectUrl') || '../';
 // If user directly navigated to /auth, but we have a user, go back
 // (they need to sign out first)
-const user = getUser();
+let user = getUser();
 if (user) location.replace(redirectUrl);
 
 // Sign up options
@@ -71,7 +71,18 @@ authForm.addEventListener('submit', async (e) => {
     // use the authType.action (either signInUser or signUpUser)
     // and capture any returned error
     const { error } = await authType.action(formData.get('email'), formData.get('password'));
-
+    if (authType === signUpType) {
+        user = getUser();
+        const profile = {
+            id: user.id,
+            user_name: '',
+            avatar_url: '',
+            bio: '',
+        };
+        await saveProfile(profile);
+        console.log(user);
+        debugger;
+    }
     if (error) {
         // display the error and reset the button to be active
         errorDisplay.textContent = error.message;

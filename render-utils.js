@@ -67,3 +67,16 @@ export function renderDetails(post) {
     div.append(categoryEl, titleEl, descriptionEl);
     return div;
 }
+
+export function renderProfile(profile) {
+    const div = document.createElement('div');
+    const profileNameEl = document.createElement('p');
+    const profileBioEl = document.createElement('p');
+
+    profileNameEl.textContent = profile.username;
+    profileBioEl.textContent = profile.bio;
+
+    div.append(profileNameEl, profileBioEl);
+    return div;
+
+}
