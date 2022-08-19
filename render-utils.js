@@ -30,6 +30,7 @@ export function renderPosts(posts) {
         const categoryEl = document.createElement('span');
         categoryEl.classList.add('category');
         categoryEl.title = post.category.name;
+        // here i grab category name but it doesnt show up in final
         categoryEl.textContent = post.category.emoji;
 
         const descriptionEl = document.createElement('p');
@@ -38,10 +39,10 @@ export function renderPosts(posts) {
 
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
-
+        // no class list add?
 
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
-
+        // no category title and no contact info in final post it
         fragment.append(a);
         a.append(li);
     }
@@ -51,22 +52,16 @@ export function renderPosts(posts) {
 
 export function renderDetails(post) {
     const div = document.createElement('div');
+    div.classList.add('post-it');
     const titleEl = document.createElement('p');
-    const descriptionEl = document.createElement('p');   
+    const descriptionEl = document.createElement('description');  
     const categoryEl = document.createElement('p');
+    categoryEl.classList.add('category-detail');
 
     titleEl.textContent = `${post.title}`;
     descriptionEl.textContent = `${post.description}`;
     categoryEl.textContent = `${post.category.emoji}`;
 
-    // const deleteButtonEl = document.createElement('button');
-    // deleteButtonEl.classList.add('delete-button');
-    // deleteButtonEl.textContent = 'DELETE THIS NEPHEW';
-
-    // deleteButtonEl.addEventListener('click', () => {
-    //     deletePostById.apply(post.id);
-    // });
-
-    div.append(titleEl, descriptionEl, categoryEl);
+    div.append(categoryEl, titleEl, descriptionEl);
     return div;
 }

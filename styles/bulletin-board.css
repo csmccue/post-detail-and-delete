@@ -50,3 +50,14 @@
     font-size: 1.5em;
 }
 
+.post-it-details .category-detail {
+    position: absolute;
+    top: 4px;
+    /* should be left but leaving as right to compare for troubleshooting */
+    left: 4px;
+    font-size: 1.0em;
+}
+
+.post-it-details .description {
+    font-size: 0.5em;
+}

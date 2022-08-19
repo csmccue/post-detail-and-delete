@@ -67,8 +67,6 @@ export async function deletePostById(id) {
     return response.data;
 }
 
-// export function checkAuth() {
-//     const user = checkAuth();
-//     return user;
-
-// }
+export async function returnHome() {
+    return await location.replace(`../`);
+}
