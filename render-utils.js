@@ -84,12 +84,22 @@ export function renderProfile(profile) {
 
 export function renderUser(id) {
     const div = document.createElement('div');
+    div.classList.add('user-class');
     const userNameEl = document.createElement('p');
     const userAvatarEl = document.createElement('p');
     const userBioEl = document.createElement('p');
-    userNameEl.textContent = id.user_name;
-    userAvatarEl.textContent = id.avatar_url;
-    userBioEl.textContent = id.bio;
+    userNameEl.textContent = 'Username: ' + id.user_name;
+    if (id.user_name === '') {
+        userNameEl.textContent = 'No Username';
+    }
+    userAvatarEl.textContent = 'Avatar: ' + id.avatar_url;
+    if (id.avatar_url === '') {
+        userAvatarEl.textContent = 'No Avatar';
+    }
+    userBioEl.textContent = 'Bio: ' + id.bio;
+    if (id.bio === '') {
+        userNameEl.textContent = 'No Bio';
+    }
     div.append(userNameEl, userAvatarEl, userBioEl);
     return div;
 

@@ -15,7 +15,7 @@ async function updateProfile() {
         avatarEl.value = profile.avatar_url;
         bioEl.value = profile.bio;
     }
-    console.log(profile);
+    // console.log(profile);
 }
 
 form.addEventListener('submit', async (e) => { 
