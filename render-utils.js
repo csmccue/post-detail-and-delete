@@ -71,20 +71,26 @@ export function renderDetails(post) {
 export function renderProfile(profile) {
     const div = document.createElement('div');
     const profileNameEl = document.createElement('p');
+    const profileAvatarEl = document.createElement('p');
     const profileBioEl = document.createElement('p');
 
     profileNameEl.textContent = profile.username;
+    profileAvatarEl.textContent = profile.avatar;
     profileBioEl.textContent = profile.bio;
 
-    div.append(profileNameEl, profileBioEl);
+    div.append(profileNameEl, profileAvatarEl, profileBioEl);
     return div;
 }
 
 export function renderUser(id) {
     const div = document.createElement('div');
     const userNameEl = document.createElement('p');
+    const userAvatarEl = document.createElement('p');
+    const userBioEl = document.createElement('p');
     userNameEl.textContent = id.user_name;
-    div.append(userNameEl);
+    userAvatarEl.textContent = id.avatar_url;
+    userBioEl.textContent = id.bio;
+    div.append(userNameEl, userAvatarEl, userBioEl);
     return div;
 
 }

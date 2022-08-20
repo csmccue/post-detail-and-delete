@@ -15,8 +15,8 @@ async function loadUsers() {
             userListEl.append(userDiv);
         }
     } 
-    // else {
-    //     userListEl.textContent = 'No Users';
-    // }
+    else {
+        userListEl.textContent = 'No Users';
+    }
 }
 loadUsers();
