@@ -1,4 +1,4 @@
-// imports
+// import
 // auth related (checkAuth, signOutUser)
 import { checkAuth, signOutUser, getCategories, createPost } from '../fetch-utils.js';
 import { renderCategoryOptions } from '../render-utils.js';
@@ -33,7 +33,7 @@ postItForm.addEventListener('submit', async (e) => {
     errorDisplay.textContent = '';
     // remember the button text
     const buttonText = addButton.textContent;
-    // disabled button and change to "saving..."
+    // disabled button and change to "sfoaving..."
     addButton.disabled = true;
     addButton.textContent = 'Saving...';
 
